@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient"
+    tools:context=".auth.LoginActivity">
+
+    <!-- Main Content -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/screen_padding_horizontal">
+
+            <!-- Logo Icon Area -->
+            <FrameLayout
+                android:id="@+id/logoContainer"
+                android:layout_width="@dimen/icon_size_xxl"
+                android:layout_height="@dimen/icon_size_xxl"
+                android:layout_marginTop="@dimen/spacing_xxl"
+                android:background="@drawable/bg_logo_circle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/ivLogo"
+                    android:layout_width="@dimen/icon_size_lg"
+                    android:layout_height="@dimen/icon_size_lg"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_school"
+                    app:tint="@color/primary" />
+
+            </FrameLayout>
+
+            <!-- Title -->
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_lg"
+                android:text="@string/app_name"
+                android:textAppearance="@style/TextAppearance.Utsmobile1.Headline"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/logoContainer" />
+
+            <!-- Subtitle -->
+            <TextView
+                android:id="@+id/tvSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_xs"
+                android:text="@string/login_subtitle"
+                android:textAppearance="@style/TextAppearance.Utsmobile1.Body"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+            <!-- White Card Container -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardForm"
+                style="@style/Widget.Utsmobile1.Card.Elevated"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_lg"
+                app:cardBackgroundColor="@color/surface"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvSubtitle">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/spacing_lg">
+
+                    <!-- Email input -->
+                    <TextView
+                        android:id="@+id/tvEmailLabel"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/spacing_xs"
+                        android:text="@string/email_address"
+                        android:textAppearance="@style/TextAppearance.Utsmobile1.Caption"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilEmail"
+                        style="@style/Widget.Utsmobile1.TextInputLayout.Form"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_xs"
+                        app:hintEnabled="false"
+                        app:boxBackgroundMode="filled"
+                        app:startIconDrawable="@drawable/ic_email"
+                        app:startIconTint="@color/on_surface_variant"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvEmailLabel">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etEmail"
+                            android:padding="15dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/email_placeholder"
+                            android:textColor="@color/input_text"
+                            android:textColorHint="@color/input_hint"
+                            android:inputType="textEmailAddress" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Password input -->
+                    <TextView
+                        android:id="@+id/tvPasswordLabel"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_lg"
+                        android:text="@string/password"
+                        android:textAppearance="@style/TextAppearance.Utsmobile1.Caption"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tilEmail" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilPassword"
+                        style="@style/Widget.Utsmobile1.TextInputLayout.Form"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_xs"
+                        app:startIconDrawable="@drawable/ic_lock"
+                        app:startIconTint="@color/on_surface_variant"
+                        app:hintEnabled="false"
+                        app:boxBackgroundMode="filled"
+                        app:endIconMode="password_toggle"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvPasswordLabel">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etPassword"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="15dp"
+                            android:hint="@string/password_placeholder"
+                            android:textColor="@color/input_text"
+                            android:textColorHint="@color/input_hint"
+                            android:inputType="textPassword" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Primary Login Button -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnLogin"
+                        style="@style/Widget.Utsmobile1.Button.Primary"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_lg"
+                        android:text="@string/login"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tilPassword"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Secondary Action: Register (Text Link) -->
+            <LinearLayout
+                android:id="@+id/llRegister"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_xl"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/cardForm"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Belum punya akun? "
+                    android:textAppearance="@style/TextAppearance.Utsmobile1.Body" />
+
+                <TextView
+                    android:id="@+id/tvRegisterLink"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Daftar"
+                    android:textColor="@color/primary"
+                    android:textStyle="bold"
+                    android:textAppearance="@style/TextAppearance.Utsmobile1.Body" />
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

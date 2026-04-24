@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    
+    <string name="app_name">Seminar Registration</string>
+
+    
+    <string name="home">Beranda</string>
+    <string name="seminar">Seminar</string>
+    <string name="settings">Pengaturan</string>
+    <string name="back">Kembali</string>
+
+    
+    <string name="login">Login</string>
+    <string name="login_subtitle">Welcome back</string>
+    <string name="email_address">Email Address</string>
+    <string name="email">Email</string>
+    <string name="email_placeholder">john@email.com</string>
+    <string name="password_placeholder">Katasandi</string>
+    <string name="password">Katasandi</string>
+    <string name="create_account">Buat Akun</string>
+    <string name="register_subtitle">Daftar untuk melanjutkan</string>
+    <string name="nama_lengkap">Nama Lengkap</string>
+    <string name="confirm_password">Konfirmasi Kata Sandi</string>
+    <string name="already_have_account">Sudah punya akun?</string>
+    <string name="welcome_message">Selamat datang di aplikasi pendaftaran seminar kami</string>
+    <string name="daftar_seminar">Daftar Seminar</string>
+    <string name="seminar_terdekat">Seminar Terdekat</string>
+    <string name="lihat_semua">Lihat Semua</string>
+    <string name="newsletter_title">Ingin informasi lebih lanjut?</string>
+    <string name="newsletter_subtitle">Berlangganan untuk mendapatkan kurasi seminar terbaru langsung di email Anda setiap minggu.</string>
+    <string name="gabung">Gabung</string>
+
+    
+    <string name="seminar_subtitle">Jelajahi kurasi seminar intelektual untuk memperluas wawasan Anda di era digital.</string>
+    <string name="featured">FITUR</string>
+    <string name="featured_seminar_title">Seminar Nasional: Masa Depan AI</string>
+    <string name="featured_seminar_desc">Membahas dampak transformatif kecerdasan buatan terhadap industri kreatif dan struktur sosial di Indonesia.</string>
+    <string name="daftar_sekarang">Daftar Sekarang</string>
+    <string name="all">Semua</string>
+    <string name="design">Desain</string>
+    <string name="data">Data</string>
+    <string name="cyber">Cyber</string>
+
+    
+    <string name="form_pendaftaran">Form Pendaftaran</string>
+    <string name="nomor_hp">Nomor HP</string>
+    <string name="jenis_kelamin">Jenis Kelamin</string>
+    <string name="laki_laki">Laki-laki</string>
+    <string name="perempuan">Perempuan</string>
+    <string name="pilih_seminar">Pilih Seminar</string>
+    <string name="pendaftaran_berhasil">Pendaftaran Berhasil</string>
+    <string name="terima_kasih">Terima kasih telah bergabung dalam perjalanan intelektual kami.</string>
+    <string name="ringkasan_pendaftaran">Ringkasan Pendaftaran</string>
+    <string name="tanggal">Tanggal</string>
+    <string name="waktu">Waktu</string>
+    <string name="lokasi">Lokasi</string>
+    <string name="id_registrasi">ID Registrasi</string>
+    <string name="confirmed">Confirmed</string>
+    <string name="kembali_ke_home">Kembali ke Home</string>
+    <string name="download_e_tiket">Download E-Tiket</string>
+
+    
+    <string name="konfirmasi_title">Konfirmasi</string>
+    <string name="konfirmasi_message">Apakah data yang Anda isi sudah benar?</string>
+    <string name="ya">Ya</string>
+    <string name="tidak">Tidak</string>
+
+    
+    <string name="error_email_required">Email tidak boleh kosong</string>
+    <string name="error_password_required">Password tidak boleh kosong</string>
+    </resources>

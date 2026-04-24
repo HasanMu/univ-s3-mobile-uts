@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".home.HomeFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/screen_padding_horizontal">
+
+        <!-- Bento Hero Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardHero"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_lg"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:cardBackgroundColor="@color/surface_container_lowest"
+            style="@style/Widget.Utsmobile1.Card">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/card_padding">
+
+                <!-- Settings Icon (top-right) -->
+
+                <!-- Welcome Badge -->
+                <TextView
+                    android:id="@+id/tvWelcomeBadge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/spacing_md"
+                    android:layout_marginTop="@dimen/spacing_md"
+                    android:background="@drawable/bg_confirmed_badge"
+                    android:paddingHorizontal="@dimen/spacing_sm"
+                    android:paddingVertical="@dimen/spacing_xs"
+                    android:text="Welcome"
+                    android:textAppearance="@style/TextAppearance.Utsmobile1.Caption"
+                    android:textColor="@color/on_surface_variant"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <!-- Big Title (uses app name) -->
+                <TextView
+                    android:id="@+id/tvWelcome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/spacing_md"
+                    android:layout_marginTop="@dimen/spacing_md"
+                    android:text="@string/app_name"
+                    android:textAppearance="@style/TextAppearance.Utsmobile1.Title"
+                    android:textColor="@color/primary"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvWelcomeBadge" />
+
+                <!-- Subtitle -->
+                <TextView
+                    android:id="@+id/tvSubtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_sm"
+                    android:layout_marginStart="@dimen/spacing_md"
+                    android:text="@string/welcome_message"
+                    android:textAppearance="@style/TextAppearance.Utsmobile1.Body"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvWelcome" />
+
+                <!-- Daftar Seminar Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnDaftarSeminar"
+                    style="@style/Widget.Utsmobile1.Button.Primary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_lg"
+                    android:text="@string/daftar_seminar"
+                    app:icon="@drawable/ic_arrow_forward"
+                    app:iconGravity="end"
+                    app:layout_constraintTop_toBottomOf="@id/tvSubtitle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Seminar Grid (2 columns) -->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintGuide_percent="0.5"
+            android:orientation="vertical" />
+
+        <LinearLayout
+            android:id="@+id/llSectionTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_xl"
+            android:orientation="horizontal"
+            android:gravity="bottom"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardHero">
+
+            <!-- Section Title: Seminar Terdekat -->
+            <TextView
+                android:id="@+id/tvSectionTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/seminar_terdekat"
+                android:textAppearance="@style/TextAppearance.Utsmobile1.Title" />
+
+            <!-- Lihat Semua Link -->
+            <TextView
+                android:id="@+id/tvLihatSemua"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lihat_semua"
+                android:textAppearance="@style/TextAppearance.Utsmobile1.Caption"
+                android:textColor="@color/primary"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Seminar Card 1 (Left) -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardSeminar1"
+            style="@style/Widget.Utsmobile1.Card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_xl"
+            android:layout_marginEnd="@dimen/spacing_sm"
+            app:layout_constraintTop_toBottomOf="@id/llSectionTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/guideline_vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/card_padding">
+
+                <TextView
+                    android:id="@+id/tvDate1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_confirmed_badge"
+                    android:paddingHorizontal="@dimen/spacing_sm"
+                    android:paddingVertical="@dimen/spacing_xs"
+                    android:text="12 Okt 2023"
+                    android:textAppearance="@style/TextAppearance.Utsmobile1.Caption"
+                    android:textColor="@color/on_surface_variant" />
+
+                <TextView
+                    android:id="@+id/tvTitle1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_md"
+                    android:text="Sustainability"
+                    android:textAppearance="@style/TextAppearance.Utsmobile1.Title" />
+
+                <TextView
+                    android:id="@+id/tvCategory1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_xs"
+                    android:text="Workshop"
+                    android:textAppearance="@style/TextAppearance.Utsmobile1.Body"
+                    android:textColor="@color/on_surface_variant" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Seminar Card 2 (Right) -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardSeminar2"
+            style="@style/Widget.Utsmobile1.Card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_xl"
+            android:layout_marginStart="@dimen/spacing_sm"
+            app:layout_constraintTop_toBottomOf="@id/llSectionTitle"
+            app:layout_constraintStart_toEndOf="@id/guideline_vertical"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/card_padding">
+
+                <TextView
+                    android:id="@+id/tvDate2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_confirmed_badge"
+                    android:paddingHorizontal="@dimen/spacing_sm"
+                    android:paddingVertical="@dimen/spacing_xs"
+                    android:text="15 Okt 2023"
+                    android:textAppearance="@style/TextAppearance.Utsmobile1.Caption"
+                    android:textColor="@color/on_surface_variant" />
+
+                <TextView
+                    android:id="@+id/tvTitle2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_md"
+                    android:text="Business Intelligence"
+                    android:textAppearance="@style/TextAppearance.Utsmobile1.Title" />
+
+                <TextView
+                    android:id="@+id/tvCategory2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_xs"
+                    android:text="Seminar"
+                    android:textAppearance="@style/TextAppearance.Utsmobile1.Body"
+                    android:textColor="@color/on_surface_variant" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Newsletter Section (inside a large rounded card) -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardNewsletter"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_xl"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardSeminar2"
+            app:cardBackgroundColor="@color/surface">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/card_padding">
+
+                <TextView
+                    android:id="@+id/tvNewsletterTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/newsletter_title"
+                    android:textAppearance="@style/TextAppearance.Utsmobile1.Title"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvNewsletterSubtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_xs"
+                    android:text="@string/newsletter_subtitle"
+                    android:textAppearance="@style/TextAppearance.Utsmobile1.Body"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvNewsletterTitle" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilNewsletter"
+                    style="@style/Widget.Utsmobile1.TextInputLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_md"
+                    android:layout_marginEnd="@dimen/spacing_sm"
+                    app:errorEnabled="true"
+                    app:hintEnabled="false"
+                    app:startIconDrawable="@drawable/ic_email"
+                    app:startIconTint="@color/on_surface_variant"
+                    app:boxBackgroundMode="filled"
+                    app:boxBackgroundColor="@color/input_background"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/btnGabung"
+                    app:layout_constraintTop_toBottomOf="@id/tvNewsletterSubtitle">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etNewsletter"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="12dp"
+                        android:textColor="@color/input_text"
+                        android:textColorHint="@color/input_hint"
+                        android:hint="@string/email_placeholder"
+                        android:inputType="textEmailAddress"
+                        android:maxLines="1" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnGabung"
+                    style="@style/Widget.Utsmobile1.Button.Primary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/gabung"
+                    android:backgroundTint="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tilNewsletter"
+                    app:layout_constraintTop_toTopOf="@id/tilNewsletter" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

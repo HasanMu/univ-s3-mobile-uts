@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".result.ResultActivity">
+
+    <!-- Scrollable Content -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/screen_padding_horizontal">
+
+            <!-- Settings Icon -->
+
+            <!-- Success Icon -->
+            <ImageView
+                android:id="@+id/ivSuccess"
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                android:background="@drawable/bg_circle_primary"
+                android:padding="20dp"
+                android:src="@drawable/ic_check_circle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:tint="@color/on_primary"
+                tools:layout_editor_absoluteY="112dp" />
+
+            <!-- Success Title -->
+            <TextView
+                android:id="@+id/tvSuccessTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_xl"
+                android:text="@string/pendaftaran_berhasil"
+                android:textAppearance="@style/TextAppearance.Utsmobile1.Headline"
+                android:textColor="@color/on_surface"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivSuccess" />
+
+            <!-- Success Subtitle -->
+            <TextView
+                android:id="@+id/tvSuccessSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_xs"
+                android:text="@string/terima_kasih"
+                android:textAppearance="@style/TextAppearance.Utsmobile1.Body"
+                android:textAlignment="center"
+                android:paddingHorizontal="@dimen/spacing_lg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvSuccessTitle" />
+
+            <!-- Summary Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardSummary"
+                style="@style/Widget.Utsmobile1.Card"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_xl"
+                app:strokeWidth="1dp"
+                app:strokeColor="#1A747D75"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvSuccessSubtitle">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="32dp">
+
+                    <!-- Card Title -->
+                    <TextView
+                        android:id="@+id/tvCardTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ringkasan_pendaftaran"
+                        android:textAppearance="@style/TextAppearance.Utsmobile1.Caption"
+                        android:textColor="@color/primary"
+                        android:textStyle="bold"
+                        android:textAllCaps="true"
+                        android:letterSpacing="0.2"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <!-- Seminar Label -->
+                    <TextView
+                        android:id="@+id/tvLabelSeminar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:text="@string/seminar"
+                        android:textAppearance="@style/TextAppearance.Utsmobile1.Caption"
+                        android:textStyle="bold"
+                        android:textAllCaps="true"
+                        android:letterSpacing="0.1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvCardTitle" />
+
+                    <!-- Seminar Value -->
+                    <TextView
+                        android:id="@+id/tvSeminar"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.Utsmobile1.Title"
+                        android:textStyle="bold"
+                        android:textColor="@color/on_surface"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvLabelSeminar"
+                        tools:text="Seni Kurasi Organik: Membangun Ekosistem Digital Berkelanjutan" />
+
+                    <!-- Tanggal Label -->
+                    <TextView
+                        android:id="@+id/tvLabelTanggal"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:text="@string/tanggal"
+                        android:textAppearance="@style/TextAppearance.Utsmobile1.Caption"
+                        android:textStyle="bold"
+                        android:textAllCaps="true"
+                        android:letterSpacing="0.1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvSeminar"
+                        app:layout_constraintWidth_percent="0.5" />
+
+                    <!-- Waktu Label -->
+                    <TextView
+                        android:id="@+id/tvLabelWaktu"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:text="@string/waktu"
+                        android:textAppearance="@style/TextAppearance.Utsmobile1.Caption"
+                        android:textStyle="bold"
+                        android:textAllCaps="true"
+                        android:letterSpacing="0.1"
+                        app:layout_constraintStart_toEndOf="@id/tvLabelTanggal"
+                        app:layout_constraintTop_toBottomOf="@id/tvSeminar"
+                        app:layout_constraintWidth_percent="0.5" />
+
+                    <!-- Tanggal Value -->
+                    <TextView
+                        android:id="@+id/tvTanggal"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.Utsmobile1.Body"
+                        android:textStyle="bold"
+                        android:textColor="@color/on_surface"
+                        app:layout_constraintEnd_toStartOf="@id/tvWaktu"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvLabelTanggal"
+                        tools:text="24 Oktober 2024" />
+
+                    <!-- Waktu Value -->
+                    <TextView
+                        android:id="@+id/tvWaktu"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.Utsmobile1.Body"
+                        android:textStyle="bold"
+                        android:textColor="@color/on_surface"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/tvTanggal"
+                        app:layout_constraintTop_toBottomOf="@id/tvLabelWaktu"
+                        tools:text="14:00 - 16:30 WIB" />
+
+                    <!-- Lokasi Label -->
+                    <TextView
+                        android:id="@+id/tvLabelLokasi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:text="@string/lokasi"
+                        android:textAppearance="@style/TextAppearance.Utsmobile1.Caption"
+                        android:textStyle="bold"
+                        android:textAllCaps="true"
+                        android:letterSpacing="0.1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvWaktu" />
+
+                    <!-- Lokasi Value Icon -->
+                    <ImageView
+                        android:id="@+id/ivLokasiIcon"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_videocam"
+                        app:tint="@color/primary"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/tvLokasi"
+                        app:layout_constraintBottom_toBottomOf="@id/tvLokasi" />
+
+                    <!-- Lokasi Value -->
+                    <TextView
+                        android:id="@+id/tvLokasi"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:textAppearance="@style/TextAppearance.Utsmobile1.Body"
+                        android:textStyle="bold"
+                        android:textColor="@color/on_surface"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/ivLokasiIcon"
+                        app:layout_constraintTop_toBottomOf="@id/tvLabelLokasi"
+                        tools:text="Virtual via Curator Live Stream" />
+
+                    <!-- ID Registrasi Section Divider -->
+                    <View
+                        android:id="@+id/idDivider"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:background="#1A747D75"
+                        android:layout_marginTop="24dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvLokasi" />
+
+                    <!-- ID Label -->
+                    <TextView
+                        android:id="@+id/tvLabelId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:text="@string/id_registrasi"
+                        android:textAppearance="@style/TextAppearance.Utsmobile1.Caption"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        android:textAllCaps="true"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/idDivider" />
+
+                    <!-- ID Value -->
+                    <TextView
+                        android:id="@+id/tvId"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.Utsmobile1.Body"
+                        android:textStyle="bold"
+                        android:fontFamily="monospace"
+                        android:textColor="@color/on_surface"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvLabelId"
+                        tools:text="OC-2024-88912-X" />
+
+                    <!-- Confirmed Badge -->
+                    <TextView
+                        android:id="@+id/chipConfirmed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_confirmed_badge"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="4dp"
+                        android:text="@string/confirmed"
+                        android:textAppearance="@style/TextAppearance.Utsmobile1.Caption"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        android:textAllCaps="true"
+                        android:textColor="@color/on_secondary_container"
+                        android:letterSpacing="0.2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/tvLabelId"
+                        app:layout_constraintBottom_toBottomOf="@id/tvId" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Primary Button: Kembali ke Home -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnPrimary"
+        style="@style/Widget.Utsmobile1.Button.Primary"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/screen_padding_horizontal"
+        android:paddingVertical="16dp"
+        android:textStyle="bold"
+        android:text="@string/kembali_ke_home"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

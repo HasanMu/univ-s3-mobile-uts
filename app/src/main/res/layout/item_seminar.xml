@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Widget.Utsmobile1.Card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/spacing_md"
+    android:clickable="true"
+    android:focusable="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/card_padding">
+
+        <!-- Seminar Title -->
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.Utsmobile1.Title"
+            app:layout_constraintEnd_toStartOf="@id/tvPrice"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Workshop UI/UX Design" />
+
+        <!-- Price -->
+        <TextView
+            android:id="@+id/tvPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.Utsmobile1.Body"
+            android:textColor="@color/primary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Rp 250.000" />
+
+        <!-- Description -->
+        <TextView
+            android:id="@+id/tvDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_xs"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textAppearance="@style/TextAppearance.Utsmobile1.Body"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle"
+            tools:text="Fundamental desain produk digital dengan pendekatan human-centered." />
+
+        <!-- Date Row -->
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_md"
+            android:textAppearance="@style/TextAppearance.Utsmobile1.Caption"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvDescription"
+            tools:text="20 Okt 2024" />
+
+        <!-- Location Row -->
+        <TextView
+            android:id="@+id/tvLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_lg"
+            android:textAppearance="@style/TextAppearance.Utsmobile1.Caption"
+            app:layout_constraintBottom_toBottomOf="@id/tvDate"
+            app:layout_constraintStart_toEndOf="@id/tvDate"
+            app:layout_constraintTop_toTopOf="@id/tvDate"
+            tools:text="Jakarta" />
+
+        <!-- Arrow Icon -->
+        <ImageView
+            android:id="@+id/ivArrow"
+            android:layout_width="@dimen/icon_size_md"
+            android:layout_height="@dimen/icon_size_md"
+            android:src="@drawable/ic_arrow_forward"
+            app:tint="@color/on_surface_variant"
+            app:layout_constraintBottom_toBottomOf="@id/tvDate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvDate" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

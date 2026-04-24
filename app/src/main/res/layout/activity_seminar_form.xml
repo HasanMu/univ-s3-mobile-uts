@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".seminar.SeminarFormActivity">
+
+    <!-- App Bar -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background"
+        app:liftOnScroll="false"
+        app:elevation="0dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+
+            <ImageButton
+                android:id="@+id/btnBack"
+                android:layout_width="@dimen/icon_size_lg"
+                android:layout_height="@dimen/icon_size_lg"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/back"
+                android:src="@drawable/ic_arrow_back"
+                app:tint="@color/primary" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_md"
+                android:text="@string/form_pendaftaran"
+                android:textAppearance="@style/TextAppearance.Utsmobile1.Title"
+                android:textColor="@color/primary"
+                android:textStyle="bold" />
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Scrollable Content -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/screen_padding_horizontal"
+            android:paddingBottom="@dimen/spacing_xxl">
+
+
+            <!-- Title -->
+            <TextView
+                android:id="@+id/tvDetailTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_xl"
+                android:text="Detail Pendaftaran"
+                android:textAppearance="@style/TextAppearance.Utsmobile1.Headline"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- Subtitle -->
+            <TextView
+                android:id="@+id/tvDetailSubtitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_xs"
+                android:text="Lengkapi formulir di bawah ini untuk mengamankan kursi Anda di seminar kurasi organik kami berikutnya."
+                android:textAppearance="@style/TextAppearance.Utsmobile1.Body"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvDetailTitle" />
+
+            <!-- Nama Input -->
+            <TextView
+                android:id="@+id/tvNamaLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_xl"
+                android:text="@string/nama_lengkap"
+                android:textAppearance="@style/TextAppearance.Utsmobile1.Title"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvDetailSubtitle" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilNama"
+                style="@style/Widget.Utsmobile1.TextInputLayout.Form"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_sm"
+                app:hintEnabled="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvNamaLabel">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etNama"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:textColor="@color/on_surface"
+                    android:textColorHint="@color/on_surface_variant"
+                    android:hint="Masukkan nama lengkap Anda"
+                    android:inputType="textPersonName"
+                    android:maxLines="1" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Email Input -->
+            <TextView
+                android:id="@+id/tvEmailLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_lg"
+                android:text="Alamat Email"
+                android:textAppearance="@style/TextAppearance.Utsmobile1.Title"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tilNama" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilEmail"
+                style="@style/Widget.Utsmobile1.TextInputLayout.Form"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_sm"
+                app:hintEnabled="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvEmailLabel">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:textColor="@color/on_surface"
+                    android:textColorHint="@color/on_surface_variant"
+                    android:hint="contoh@email.com"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Nomor HP Input -->
+            <TextView
+                android:id="@+id/tvHpLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_lg"
+                android:text="@string/nomor_hp"
+                android:textAppearance="@style/TextAppearance.Utsmobile1.Title"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tilEmail" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilHp"
+                style="@style/Widget.Utsmobile1.TextInputLayout.Form"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_sm"
+                app:hintEnabled="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvHpLabel">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etHp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:textColor="@color/on_surface"
+                    android:textColorHint="@color/on_surface_variant"
+                    android:hint="0812xxxx"
+                    android:inputType="phone"
+                    android:maxLength="13"
+                    android:maxLines="1" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Jenis Kelamin Label -->
+            <TextView
+                android:id="@+id/tvGenderLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_lg"
+                android:text="@string/jenis_kelamin"
+                android:textAppearance="@style/TextAppearance.Utsmobile1.Title"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tilHp" />
+
+            <!-- Radio Group: Gender -->
+            <RadioGroup
+                android:id="@+id/rgGender"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_sm"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvGenderLabel">
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/rbLaki"
+                    style="@style/Widget.Utsmobile1.RadioButton.Block"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="@dimen/spacing_sm"
+                    android:text="@string/laki_laki" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/rbPerempuan"
+                    style="@style/Widget.Utsmobile1.RadioButton.Block"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="@dimen/spacing_sm"
+                    android:text="@string/perempuan" />
+
+            </RadioGroup>
+
+            <!-- Pilih Seminar Label -->
+            <TextView
+                android:id="@+id/tvSeminarLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_lg"
+                android:text="@string/pilih_seminar"
+                android:textAppearance="@style/TextAppearance.Utsmobile1.Title"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rgGender" />
+
+            <!-- Spinner: Seminar Dropdown -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilSeminar"
+                style="@style/Widget.Utsmobile1.TextInputLayout.Form.ExposedDropdownMenu"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_sm"
+                app:hintEnabled="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvSeminarLabel">
+
+                <AutoCompleteTextView
+                    android:id="@+id/actvSeminar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:textColor="@color/on_surface"
+                    android:textColorHint="@color/on_surface_variant"
+                    android:hint="Silakan pilih seminar"
+                    android:inputType="none" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Checkbox Agreement -->
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/cbAgreement"
+                style="@style/Widget.Utsmobile1.CheckBox.Form"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_lg"
+                android:text="Saya menyetujui Syarat &amp; Ketentuan yang berlaku dan bersedia menerima informasi terkait seminar melalui email."
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tilSeminar" />
+
+            <!-- Submit Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSubmit"
+                style="@style/Widget.Utsmobile1.Button.Primary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_xl"
+                android:paddingVertical="16dp"
+                android:text="Konfirmasi Pendaftaran"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cbAgreement" />
+                
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_md"
+                android:text="Data Anda akan diproses secara aman dan tidak dibagikan kepada pihak ketiga."
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.Utsmobile1.Caption"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btnSubmit" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
